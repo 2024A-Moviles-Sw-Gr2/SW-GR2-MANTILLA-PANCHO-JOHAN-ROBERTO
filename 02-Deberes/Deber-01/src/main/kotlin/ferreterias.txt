@@ -1,0 +1,1 @@
+1,EcuaFerris,false,89.9, 256.0
