@@ -1,5 +1,3 @@
-import java.util.*
-
 data class Ferreteria(
     val idFerreteria: Int,
     val nombre: String,
@@ -10,7 +8,7 @@ data class Ferreteria(
     companion object {
         private val archivo = Archivo()
 
-        fun listar(): List<Ferreteria> {
+        fun listarFerreterias(): List<Ferreteria> {
             return archivo.leerFerreterias()
         }
 
@@ -23,6 +21,15 @@ data class Ferreteria(
             ferreterias.removeIf { it.idFerreteria == id }
             archivo.escribirFerreterias(ferreterias)
         }
+
+        fun actualizar(nuevaFerreteria: Ferreteria) {
+            val ferreterias = archivo.leerFerreterias().toMutableList()
+            val index = ferreterias.indexOfFirst { it.idFerreteria == nuevaFerreteria.idFerreteria }
+            if (index != -1) {
+                ferreterias[index] = nuevaFerreteria
+                archivo.escribirFerreterias(ferreterias)
+            }
+        }
     }
 
     fun agregar() {
@@ -31,12 +38,5 @@ data class Ferreteria(
         archivo.escribirFerreterias(ferreterias)
     }
 
-    fun actualizar(nuevaFerreteria: Ferreteria) {
-        val ferreterias = archivo.leerFerreterias().toMutableList()
-        val index = ferreterias.indexOfFirst { it.idFerreteria == nuevaFerreteria.idFerreteria }
-        if (index != -1) {
-            ferreterias[index] = nuevaFerreteria
-            archivo.escribirFerreterias(ferreterias)
-        }
-    }
+
 }

@@ -8,7 +8,7 @@ data class Herramienta(
     companion object {
         private val archivo = Archivo()
 
-        fun listar(): List<Herramienta> {
+        fun listarHerramientas(): List<Herramienta> {
             return archivo.leerHerramientas()
         }
 
@@ -21,6 +21,15 @@ data class Herramienta(
             herramientas.removeIf { it.idHerramienta == id }
             archivo.escribirHerramientas(herramientas)
         }
+
+        fun actualizar(nuevaHerramienta: Herramienta) {
+            val herramientas = archivo.leerHerramientas().toMutableList()
+            val index = herramientas.indexOfFirst { it.idHerramienta == nuevaHerramienta.idHerramienta }
+            if (index != -1) {
+                herramientas[index] = nuevaHerramienta
+                archivo.escribirHerramientas(herramientas)
+            }
+        }
     }
 
     fun agregar() {
@@ -29,12 +38,5 @@ data class Herramienta(
         archivo.escribirHerramientas(herramientas)
     }
 
-    fun actualizar(nuevaHerramienta: Herramienta) {
-        val herramientas = archivo.leerHerramientas().toMutableList()
-        val index = herramientas.indexOfFirst { it.idHerramienta == nuevaHerramienta.idHerramienta }
-        if (index != -1) {
-            herramientas[index] = nuevaHerramienta
-            archivo.escribirHerramientas(herramientas)
-        }
-    }
+
 }

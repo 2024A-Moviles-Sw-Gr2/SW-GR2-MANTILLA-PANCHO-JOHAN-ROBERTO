@@ -1,1 +1,2 @@
-1,EcuaFerris,false,89.9, 256.0
+2,FERRILOOPS,false,56.4, 230.0
+4,FerreteriaEco,true,45.7, 220.0

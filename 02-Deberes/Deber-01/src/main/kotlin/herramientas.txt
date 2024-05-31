@@ -1,6 +1,1 @@
-1,Martillo Pro,20.99,true,1.5
-1,Martillo,15.99,true,1.5
-1,Martillo,15.99,true,1.5
-1,Martillo,15.99,true,1.5
-1,Martillo,15.99,true,1.5
-1,Martillo,15.99,true,1.5
+2,Taladro,50.0,true,100.0
