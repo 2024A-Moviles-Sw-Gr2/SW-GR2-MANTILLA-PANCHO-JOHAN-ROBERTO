@@ -16,9 +16,9 @@ fun main() {
         )
 
         println("Ingrese la opción deseada: ")
-        val opcion = readLine().toString().toInt()
+        val opcionDeMenu = readLine().toString().toInt()
 
-        when (opcion) {
+        when (opcionDeMenu) {
             1 -> {
                 try {
                     crearFerreteriaDesdeTeclado().agregar()
@@ -39,17 +39,17 @@ fun main() {
             }
 
             3 -> {
-                val valorBusqueda = leerValorParaBuscar()
-                if (Ferreteria.buscar(valorBusqueda) != null) {
+                val idFerreteriaABuscar = leerValorParaBuscar()
+                if (Ferreteria.buscar(idFerreteriaABuscar) != null) {
                     println("Ferretería encontrada")
                 } else {
                     println("No se encontró la ferretería")
                 }
             }
             4 -> {
-                val ferreteriaActualizada = crearFerreteriaDesdeTeclado()
+                val nuevosDatosFerreteria = crearFerreteriaDesdeTeclado()
                 try {
-                    Ferreteria.actualizar(ferreteriaActualizada)
+                    Ferreteria.actualizar(nuevosDatosFerreteria)
                     println("Ferretería actualizada")
                 } catch (e: Exception) {
                     println("Ferretería no actualizada: ${e.message}")
@@ -82,17 +82,17 @@ fun main() {
                 }
             }
             8 -> {
-                val valorBusqueda = leerValorParaBuscar()
-                if (Herramienta.buscar(valorBusqueda) != null) {
+                val idHerramientaABuscar = leerValorParaBuscar()
+                if (Herramienta.buscar(idHerramientaABuscar) != null) {
                     println("Herramienta encontrada")
                 } else {
                     println("No se encontró la herramienta")
                 }
             }
             9 -> {
-                val herramientaActualizada = crearHerramientaDesdeTeclado()
+                val nuevosDatosHerramienta = crearHerramientaDesdeTeclado()
                 try {
-                    Herramienta.actualizar(herramientaActualizada)
+                    Herramienta.actualizar(nuevosDatosHerramienta)
                     println("Herramienta actualizada")
                 } catch (e: Exception) {
                     println("Herramienta no actualizada: ${e.message}")
@@ -115,7 +115,6 @@ fun main() {
 
 }
 
-//Herramienta(1, "Martillo Pro", 20.99, true, 1.5f)
 fun crearHerramientaDesdeTeclado(): Herramienta {
     while (true) {
         try {
@@ -148,7 +147,6 @@ fun leerValorParaEliminar(): Int {
     return valorAEliminar
 }
 
-//Ferreteria(1, "EcuaFerris", false, 89.9, 256f)
 fun crearFerreteriaDesdeTeclado(): Ferreteria {
     while (true) {
         try {
@@ -174,7 +172,6 @@ fun crearFerreteriaDesdeTeclado(): Ferreteria {
         }
     }
 }
-
 
 fun leerValorParaBuscar(): Int {
     println("Ingrese el ID de la ferreteria a buscar")

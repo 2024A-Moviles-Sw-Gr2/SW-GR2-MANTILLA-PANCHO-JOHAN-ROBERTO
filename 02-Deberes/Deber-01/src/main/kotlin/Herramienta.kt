@@ -37,6 +37,4 @@ data class Herramienta(
         herramientas.add(this)
         archivo.escribirHerramientas(herramientas)
     }
-
-
 }
