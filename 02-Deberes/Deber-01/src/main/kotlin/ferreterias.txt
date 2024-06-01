@@ -1,2 +1,2 @@
-2,FERRILOOPS,false,56.4, 230.0
-4,FerreteriaEco,true,45.7, 220.0
+4,FERRETERIALATOLA,true,96.3, 780.0
+5,FERRETERIASA,false,75.6, 900.0

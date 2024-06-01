@@ -1,1 +1,1 @@
-2,Taladro,50.0,true,100.0
+1,DESTORNILLADOR,1.15,true,1.0

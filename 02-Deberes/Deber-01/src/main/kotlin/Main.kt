@@ -130,7 +130,7 @@ fun crearHerramientaDesdeTeclado(): Herramienta {
             println("Ingrese (true/false) para indicar si la herramienta es de construccion):")
             val esHerramientaDeConstruccion = readLine().toBoolean()
 
-            println("Ingrese el peso en metros (Ejm: 210f)")
+            println("Ingrese el peso en gramos (Ejm: 210f)")
             val pesoEnMetros = readLine().toString().toFloat()
 
             return Herramienta(idHerramienta, nombre, precio, esHerramientaDeConstruccion, pesoEnMetros)
