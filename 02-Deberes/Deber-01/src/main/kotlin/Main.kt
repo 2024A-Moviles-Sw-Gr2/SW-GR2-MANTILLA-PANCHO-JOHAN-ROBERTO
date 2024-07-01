@@ -124,22 +124,58 @@ fun crearHerramientaDesdeTeclado(): Herramienta {
             println("Ingrese el nombre de la Herramienta:")
             val nombre = readLine().toString()
 
-            println("Ingrese el precio de la Herramienta")
-            val precio = readLine().toString().toDouble()
+            println("Ingrese el precio de la Herramienta:")
+            val precio = readLine().toString().toFloat()
+            if (precio <= 0) {
+                throw IllegalArgumentException("El precio debe ser un número positivo.")
+            }
 
-            println("Ingrese (true/false) para indicar si la herramienta es de construccion):")
-            val esHerramientaDeConstruccion = readLine().toBoolean()
+            println("Ingrese (true/false) para indicar si la herramienta está en stock:")
+            val enStock = readLine().toString().toBooleanStrictOrNull()
+                ?: throw IllegalArgumentException("Valor inválido para 'en stock'. Debe ser 'true' o 'false'.")
 
-            println("Ingrese el peso en gramos (Ejm: 210f)")
-            val pesoEnMetros = readLine().toString().toFloat()
+            println("Ingrese el código de barras (13 dígitos):")
+            val codigoBarra = readLine().toString().toLong()
+            if (codigoBarra.toString().length != 13) {
+                throw IllegalArgumentException("El código de barras debe tener 13 dígitos.")
+            }
 
-            return Herramienta(idHerramienta, nombre, precio, esHerramientaDeConstruccion, pesoEnMetros)
+            val nuevaHerramienta = Herramienta(idHerramienta, nombre, precio, enStock, codigoBarra)
+            if (!validarHerramienta(nuevaHerramienta)) {
+                throw IllegalArgumentException("Datos inválidos para la herramienta.")
+            }
+            return nuevaHerramienta
         } catch (e: Exception) {
             println("Error: ${e.message}")
             println("Intente nuevamente.")
         }
     }
 }
+
+private fun validarHerramienta(herramienta: Herramienta): Boolean {
+    if (herramienta.nombre.isBlank()) {
+        println("El nombre no puede estar vacío.")
+        return false
+    }
+    if (herramienta.precio <= 0) {
+        println("El precio debe ser un número positivo.")
+        return false
+    }
+    if (herramienta.codigoBarra.toString().length != 13) {
+        println("El código de barras debe tener 13 dígitos.")
+        return false
+    }
+    return true
+}
+
+fun String.toBooleanStrictOrNull(): Boolean? {
+    return when {
+        this.equals("true", ignoreCase = true) -> true
+        this.equals("false", ignoreCase = true) -> false
+        else -> null
+    }
+}
+
 
 fun leerValorParaEliminar(): Int {
     println("Ingrese el ID de la ferreteria a eliminar")
@@ -156,22 +192,50 @@ fun crearFerreteriaDesdeTeclado(): Ferreteria {
             println("Ingrese el nombre de la Ferreteria:")
             val nombre = readLine().toString()
 
-            println("Ingrese (true/false) para saber si la Ferreteria tiene Proveedores")
-            val tieneProveedores = readLine().toBoolean()
+            println("Ingrese (true/false) para saber si la Ferreteria está abierta:")
+            val abierta = readLine().toString().toBooleanStrictOrNull()
+                ?: throw IllegalArgumentException("Valor inválido para 'abierta'. Debe ser 'true' o 'false'.")
 
-            println("Ingrese el porcentaje de cumplimiento de la Ferreteria:")
-            val porcentajeDeCumpliento = readLine().toString().toDouble()
+            println("Ingrese el número de teléfono de la Ferreteria (10 dígitos):")
+            val numeroTelefono = readLine().toString().toLong()
+            if (numeroTelefono.toString().length != 10) {
+                throw IllegalArgumentException("El número de teléfono debe tener 10 dígitos.")
+            }
 
-            println("Ingrese la capacidad en metros de la Ferreteria (Ejm: 250f)")
-            val capacidadEnMetros = readLine().toString().toFloat()
+            println("Ingrese el area en metros de la Ferreteria (Ejm: 25.1f):")
+            val area = readLine().toString().toFloat()
+            if (area <= 0) {
+                throw IllegalArgumentException("El área debe ser un número positivo.")
+            }
 
-            return Ferreteria(idFerreteria, nombre, tieneProveedores, porcentajeDeCumpliento, capacidadEnMetros)
+            val nuevaFerreteria = Ferreteria(idFerreteria, nombre, abierta, numeroTelefono, area)
+            if (!validarFerreteria(nuevaFerreteria)) {
+                throw IllegalArgumentException("Datos inválidos para la ferretería.")
+            }
+            return nuevaFerreteria
         } catch (e: Exception) {
             println("Error: ${e.message}")
             println("Intente nuevamente.")
         }
     }
 }
+
+private fun validarFerreteria(ferreteria: Ferreteria): Boolean {
+    if (ferreteria.nombre.isBlank()) {
+        println("El nombre no puede estar vacío.")
+        return false
+    }
+    if (ferreteria.numeroTelefono.toString().length != 10) {
+        println("El número de teléfono debe tener 10 dígitos.")
+        return false
+    }
+    if (ferreteria.area <= 0) {
+        println("El área debe ser un número positivo.")
+        return false
+    }
+    return true
+}
+
 
 fun leerValorParaBuscar(): Int {
     println("Ingrese el ID de la ferreteria a buscar")

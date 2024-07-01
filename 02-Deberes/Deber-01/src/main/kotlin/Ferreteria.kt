@@ -1,9 +1,9 @@
 data class Ferreteria(
     val idFerreteria: Int,
     val nombre: String,
-    val tieneProveedoresNacionales: Boolean,
-    val porcentanjeDeCumplimiento: Double,
-    val capacidadEnMetros: Float
+    val abierta: Boolean,
+    val numeroTelefono:Long,
+    val area: Float
 ) {
     companion object {
         private val archivo = Archivo()

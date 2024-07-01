@@ -22,9 +22,9 @@ class Archivo {
                 Herramienta(
                     parts[0].toInt(),
                     parts[1],
-                    parts[2].toDouble(),
+                    parts[2].toFloat(),
                     parts[3].toBoolean(),
-                    parts[4].toFloat()
+                    parts[4].toLong()
                 )
             } else {
                 null
@@ -35,7 +35,7 @@ class Archivo {
     fun escribirHerramientas(herramientas: List<Herramienta>) {
         val writer = BufferedWriter(FileWriter(herramientasFile))
         for (herramienta in herramientas) {
-            writer.write("${herramienta.idHerramienta},${herramienta.nombre},${herramienta.precio},${herramienta.esHerramientaDeConstruccion},${herramienta.pesoEnMetros}")
+            writer.write("${herramienta.idHerramienta},${herramienta.nombre},${herramienta.precio},${herramienta.enStock},${herramienta.codigoBarra}")
             writer.newLine()
         }
         writer.close()
@@ -51,7 +51,7 @@ class Archivo {
                     parts[0].toInt(),
                     parts[1],
                     parts[2].toBoolean(),
-                    parts[3].toDouble(),
+                    parts[3].toLong(),
                     parts[4].toFloat()
                 )
             } else {
@@ -63,7 +63,7 @@ class Archivo {
     fun escribirFerreterias(ferreterias: List<Ferreteria>) {
         val writer = BufferedWriter(FileWriter(ferreteriasFile))
         for (ferreteria in ferreterias) {
-            writer.write("${ferreteria.idFerreteria},${ferreteria.nombre},${ferreteria.tieneProveedoresNacionales},${ferreteria.porcentanjeDeCumplimiento}, ${ferreteria.capacidadEnMetros}")
+            writer.write("${ferreteria.idFerreteria},${ferreteria.nombre},${ferreteria.abierta},${ferreteria.numeroTelefono}, ${ferreteria.area}")
             writer.newLine()
         }
         writer.close()

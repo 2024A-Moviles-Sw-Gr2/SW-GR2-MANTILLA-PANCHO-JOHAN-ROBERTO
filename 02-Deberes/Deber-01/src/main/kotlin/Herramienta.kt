@@ -1,9 +1,9 @@
 data class Herramienta(
     val idHerramienta: Int,
     val nombre: String,
-    val precio: Double,
-    val esHerramientaDeConstruccion: Boolean,
-    val pesoEnMetros: Float
+    val precio: Float,
+    val enStock: Boolean,
+    val codigoBarra: Long
 ) {
     companion object {
         private val archivo = Archivo()
