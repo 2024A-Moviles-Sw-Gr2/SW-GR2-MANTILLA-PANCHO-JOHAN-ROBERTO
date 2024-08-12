@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1097623144585",
+    "project_id": "ferreteria-194e5",
+    "storage_bucket": "ferreteria-194e5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1097623144585:android:73478d1caaf9e9bd419e58",
+        "android_client_info": {
+          "package_name": "com.example.ferreteria"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxjYiBw9aMfOyFwuvPK-qCZ7zHRItFxFI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
