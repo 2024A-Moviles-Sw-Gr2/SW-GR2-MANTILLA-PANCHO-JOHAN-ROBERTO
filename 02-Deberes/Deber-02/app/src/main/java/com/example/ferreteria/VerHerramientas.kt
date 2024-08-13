@@ -5,13 +5,13 @@ import android.widget.ArrayAdapter
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 
-class VerFerreteria : AppCompatActivity() {
+class VerHerramientas : AppCompatActivity() {
     private lateinit var listView: ListView
     private lateinit var adaptador: ArrayAdapter<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_ver_ferreteria)
+        setContentView(R.layout.activity_ver_herramientas)
 
         listView = findViewById(R.id.lv_ferreterias)
 

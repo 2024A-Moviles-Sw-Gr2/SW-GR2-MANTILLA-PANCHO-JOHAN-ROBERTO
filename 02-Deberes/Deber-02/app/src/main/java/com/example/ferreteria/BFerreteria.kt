@@ -7,28 +7,22 @@ class BFerreteria(
     val idFerreteria: Int,
     val nombre: String,
     val abierta: String?,
-    val numeroTelefono: Int,
-    val area: Float
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
         parcel.readString()!!,
-        parcel.readString(),
-        parcel.readInt(),
-        parcel.readFloat()
+        parcel.readString()
     ) {
     }
 
     override fun toString(): String {
-        return "$idFerreteria, '$nombre', '$abierta', $numeroTelefono, $area)"
+        return "$idFerreteria, $nombre, $abierta"
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeInt(idFerreteria)
         parcel.writeString(nombre)
         parcel.writeString(abierta)
-        parcel.writeInt(numeroTelefono)
-        parcel.writeFloat(area)
     }
 
 
