@@ -13,11 +13,10 @@ class BFerreteria(
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
         parcel.readString()!!,
-        parcel.readString()!!,
+        parcel.readString(),
         parcel.readInt(),
         parcel.readFloat()
     ) {
-
     }
 
     override fun toString(): String {
@@ -34,7 +33,7 @@ class BFerreteria(
 
 
     override fun describeContents(): Int {
-        return 0;
+        return 0
     }
 
     companion object CREATOR : Parcelable.Creator<BFerreteria> {
@@ -45,7 +44,7 @@ class BFerreteria(
         override fun newArray(size: Int): Array<BFerreteria?> {
             return arrayOfNulls(size)
         }
-
     }
+
 
 }
