@@ -1,8 +1,5 @@
 package com.example.proyecto2
 
-import EquipoFragment
-import PerfilFragment
-import PrestamoFragment
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
