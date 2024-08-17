@@ -1,5 +1,6 @@
 package com.example.proyecto2
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 
 class EquipoFragment : Fragment() {
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -20,9 +20,16 @@ class EquipoFragment : Fragment() {
         return view
     }
 
-    fun initRecyclerView(view: View){
+    private fun initRecyclerView(view: View) {
         val recyclerView = view.findViewById<RecyclerView>(R.id.mReciclerView)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        recyclerView.adapter = ReciclerViewAdaptador(EquipoProvider.arregloEquipos)
+        recyclerView.adapter = ReciclerViewAdaptador(EquipoProvider.arregloEquipos) { equipo ->
+            // Aquí manejas el clic del item
+            val intent = Intent(requireContext(), EquipoViewActivity::class.java).apply {
+                putExtra("EQUIPO_NOMBRE", equipo.nombreEquipo)
+                putExtra("EQUIPO_IMAGEN_ID", equipo.imagenId)
+            }
+            startActivity(intent)
+        }
     }
 }

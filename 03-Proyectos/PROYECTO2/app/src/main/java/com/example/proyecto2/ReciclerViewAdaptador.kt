@@ -10,14 +10,16 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 
 class ReciclerViewAdaptador(
-    private val lista:List<EquipoModel>
-): RecyclerView.Adapter<
+    private val lista: List<EquipoModel>,
+    private val onItemClick: (EquipoModel) -> Unit
+) : RecyclerView.Adapter<
         ReciclerViewAdaptador.MyViewHolder
         >() {
-    inner class MyViewHolder(view: View): RecyclerView.ViewHolder(view) {
+    inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val nombreTextView: TextView
         val imagenImageView: ImageView
         val tarjetaCardView: CardView
+
         init {
             tarjetaCardView = view.findViewById(R.id.cv_tarjeta)
             nombreTextView = view.findViewById(R.id.tv_nombre_equipo)
@@ -38,13 +40,15 @@ class ReciclerViewAdaptador(
     override fun getItemCount(): Int {
         return this.lista.size
     }
+
     //Setear los datos para a iteracion
-    override fun onBindViewHolder(
-        holder: MyViewHolder,
-        position: Int
-    ) {
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val elementoActual = this.lista[position]
         holder.nombreTextView.text = elementoActual.nombreEquipo
         holder.imagenImageView.setBackgroundResource(elementoActual.imagenId)
+
+        holder.tarjetaCardView.setOnClickListener {
+            onItemClick(elementoActual)
+        }
     }
 }
