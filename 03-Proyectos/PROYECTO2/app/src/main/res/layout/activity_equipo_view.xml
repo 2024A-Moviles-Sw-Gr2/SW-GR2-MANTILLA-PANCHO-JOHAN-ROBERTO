@@ -7,20 +7,20 @@
     tools:context=".EquipoViewActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/id_titulo_implemento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="48dp"
         android:text="Raqueta"
         android:textSize="34sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintBottom_toTopOf="@+id/id_imagen_implemento"
+        app:layout_constraintEnd_toEndOf="@+id/id_imagen_implemento"
         app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="@+id/imageView2" />
+        app:layout_constraintStart_toStartOf="@+id/id_imagen_implemento" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/id_imagen_implemento"
         android:layout_width="228dp"
         android:layout_height="238dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -28,7 +28,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.292"
-        app:srcCompat="@mipmap/raqueta"/>
+        app:srcCompat="@mipmap/raqueta" />
 
     <EditText
         android:id="@+id/editTextNumber"
@@ -37,11 +37,11 @@
         android:layout_marginTop="56dp"
         android:ems="10"
         android:inputType="number"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/id_imagen_implemento"
         app:layout_constraintHorizontal_bias="0.786"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintStart_toStartOf="@+id/id_imagen_implemento"
+        app:layout_constraintTop_toBottomOf="@+id/id_imagen_implemento" />
 
     <TextView
         android:id="@+id/textView2"
@@ -50,6 +50,7 @@
         android:layout_marginEnd="8dp"
         android:text="Cantidad:"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/editTextNumber"
         app:layout_constraintEnd_toStartOf="@+id/editTextNumber"
         app:layout_constraintTop_toTopOf="@+id/editTextNumber"
@@ -59,12 +60,38 @@
         android:id="@+id/btn_solicitar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="144dp"
+        android:layout_marginTop="244dp"
         android:text="Solicitar"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintEnd_toEndOf="@+id/id_imagen_implemento"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="@+id/id_imagen_implemento"
+        app:layout_constraintTop_toBottomOf="@+id/id_imagen_implemento" />
+
+    <Spinner
+        android:id="@+id/spinnerTiempo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleX="1.20"
+        android:scaleY="1.20"
+        app:layout_constraintBottom_toTopOf="@+id/btn_solicitar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTiempoSeleccionado"
+        app:layout_constraintVertical_bias="0.082" />
+
+    <TextView
+        android:id="@+id/tvTiempoSeleccionado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Horario de préstamo"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.138" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

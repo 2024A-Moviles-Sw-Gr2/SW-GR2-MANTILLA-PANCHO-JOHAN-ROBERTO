@@ -52,16 +52,12 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/tv_renta"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Rentado 10:00 AM"
-                    android:textSize="18sp" />
+                    android:text="Rentado"
+                    android:textSize="24sp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Entrega 13:00 PM"
-                    android:textSize="18sp" />
             </LinearLayout>
         </LinearLayout>
 
@@ -199,6 +195,7 @@
                     android:textAlignment="center" />
 
                 <TextView
+                    android:id="@+id/tvNombreEquipo"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
