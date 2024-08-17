@@ -13,6 +13,9 @@
         android:theme="@style/Theme.PROYECTO2"
         tools:targetApi="31">
         <activity
+            android:name=".DetallePedido"
+            android:exported="false" />
+        <activity
             android:name=".EquipoDeportivo"
             android:exported="false" />
         <activity
