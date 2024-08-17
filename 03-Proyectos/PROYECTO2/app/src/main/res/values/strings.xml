@@ -1,5 +1,13 @@
 <resources>
     <string name="app_name">PROYECTO2</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="nombre_equipo">Raqueta</string>
+
+    <string-array name="equipo_full_txt">
+        <item>Raqueta</item>
+        <item>Pupos</item>
+        <item>Pelota de Futbol</item>
+        <item>Pelota de Basquet</item>
+        <item>Pelota de Volley</item>
+    </string-array>
 </resources>
