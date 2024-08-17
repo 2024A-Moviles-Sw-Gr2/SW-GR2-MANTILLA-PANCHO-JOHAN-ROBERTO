@@ -16,6 +16,9 @@
             android:name=".DetallePedido"
             android:exported="false" />
         <activity
+            android:name=".EquipoViewActivity"
+            android:exported="false" />
+        <activity
             android:name=".EquipoDeportivo"
             android:exported="false" />
         <activity
