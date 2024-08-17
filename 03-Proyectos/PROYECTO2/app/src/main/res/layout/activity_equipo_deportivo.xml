@@ -10,15 +10,17 @@
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="78dp"
-        android:background="?attr/colorPrimary"
+        android:background="#F9D797"
         app:tabIndicatorColor="@android:color/white"
-        app:tabSelectedTextColor="@android:color/holo_blue_light"
+        app:tabIconTint="@color/black"
+        app:tabSelectedTextColor="@color/black"
         app:tabTextColor="@android:color/white" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/tab_layout" />
+        android:layout_height="653dp"
+        android:layout_gravity="bottom"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
